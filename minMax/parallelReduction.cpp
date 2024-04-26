@@ -49,6 +49,53 @@ void average_reduction(int arr[], int n)
     }
     cout << "Average: " << (double)sum / (n - 1) << endl;
 }
+
+double calculateStandardDeviation(const vector<int>& arr) 
+{ 
+
+    double sum = 0.0, mean, standardDeviation = 0.0; 
+
+  
+
+    int size = arr.size(); 
+
+  
+
+    // Calculate the sum of elements in the vector 
+
+    for (int i = 0; i < size; ++i) { 
+
+        sum += arr[i]; 
+
+    } 
+
+  
+
+    // Calculate the mean 
+
+    mean = sum / size; 
+
+  
+
+    // Calculate the sum of squared differences from the 
+
+    // mean 
+
+    for (int i = 0; i < size; ++i) { 
+
+        standardDeviation += pow(arr[i] - mean, 2); 
+
+    } 
+
+  
+
+    // Calculate the square root of the variance to get the 
+
+    // standard deviation 
+
+    return sqrt(standardDeviation / size); 
+} 
+
 int main()
 {
     int *arr, n;
